@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+python-jose
+ably
+pydantic 
+confluent-kafka
