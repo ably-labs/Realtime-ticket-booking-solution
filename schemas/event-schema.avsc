@@ -1,0 +1,32 @@
+{
+    "namespace": "example.avro.ably",
+    "type": "record",
+    "name": "Event",
+    "fields": [
+       {
+        "name": "eventId",
+        "type": "string"
+      },
+      {
+        "name": "eventCapacity",
+        "type": "int",
+        "default": 100
+      },
+      {
+          "name": "eventDate",
+          "type": "long"
+      },
+      {
+          "name": "bookingStart",
+          "type": "long"
+      },
+      {
+          "name": "bookingEnd",
+          "type": "long"
+      },
+      {
+        "name": "timestamp",
+        "type": "int"
+      }
+    ]
+  }

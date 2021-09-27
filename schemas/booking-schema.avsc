@@ -1,0 +1,24 @@
+{
+    "namespace": "example.avro.ably",
+    "type": "record",
+    "name": "Booking",
+    "fields": [
+      {
+        "name": "userId",
+        "type": "string"
+      },
+      {
+        "name": "eventId",
+        "type": "string"
+      },
+      {
+        "name": "ticketNumber",
+        "type": "int",
+        "default": 1
+      },
+      {
+        "name": "timestamp",
+        "type": "int"
+      }
+    ]
+  }
