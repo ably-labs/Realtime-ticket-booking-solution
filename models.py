@@ -5,10 +5,11 @@ from datetime import date, datetime, time, timedelta
 
 class Event(BaseModel):
     eventId: str
-    bookingStart: datetime
-    eventDate: datetime
-    bookingEnd: datetime
     eventCapacity: int
+    eventDate: int
+    bookingStart: int
+    bookingEnd: int
+    timestamp: int
     pass
 
 class Booking(BaseModel):

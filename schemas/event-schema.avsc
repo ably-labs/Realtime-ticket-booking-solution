@@ -1,11 +1,13 @@
 {
-    "namespace": "example.avro.ably",
-    "type": "record",
-    "name": "Event",
-    "fields": [
+  "type": "record",
+  "namespace": "example.avro.ably",
+  "name": "Event",
+  "doc": "This is the schema for an event, containts it time, capacity and booking window",
+  "fields": [
        {
         "name": "eventId",
-        "type": "string"
+        "type": "string",
+        "default": "no name"
       },
       {
         "name": "eventCapacity",
@@ -26,7 +28,7 @@
       },
       {
         "name": "timestamp",
-        "type": "int"
+        "type": "long"
       }
     ]
   }
