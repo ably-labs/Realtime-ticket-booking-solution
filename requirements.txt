@@ -4,3 +4,4 @@ python-jose
 ably
 pydantic 
 confluent-kafka
+names
