@@ -3,7 +3,7 @@ from typing import *
 from datetime import date, datetime, time, timedelta
 
 
-class Event(BaseModel):
+class Conference(BaseModel):
     eventId: str
     eventCapacity: int
     eventDate: int
