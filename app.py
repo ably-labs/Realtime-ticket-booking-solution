@@ -51,7 +51,7 @@ async def bookings(data: AblyWebhook, request: Request):
             booking_producer.produce(booking_topic, None, booking_entry.dict())
 
         booking_producer.poll(0)
-        booking_producer.flush
+        booking_producer.flush()
     except Exception as e:
         print(e)
         return 400
