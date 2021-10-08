@@ -2,7 +2,7 @@
   "type": "record",
   "namespace": "example.avro.ably",
   "name": "conference",
-  "doc": "This is the schema for a conference, containts it time, capacity and booking window",
+  "doc": "This is the schema for a conference, contains it time, capacity and booking window",
   "fields": [
        {
         "name": "eventId",

@@ -65,7 +65,7 @@ async def conference_creation(data: Conference, request: Request):
         conference_producer.produce(conference_topic, None, data.dict())
         conference_producer.poll(0)
         conference_producer.flush()
-        print (data.dict())
+        print(data.dict())
     except Exception as e:
         print(e)
         return 400

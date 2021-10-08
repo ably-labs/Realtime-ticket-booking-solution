@@ -1,7 +1,5 @@
-import asyncio
 from ably import AblyRest
 import datetime
-import json
 import names
 import random
 
@@ -11,7 +9,7 @@ import random
 event_name = "William's big event"
 
 # A sample booking JSON that matches the schema in the models expected by system
-mybooking  =  {
+mybooking = {
     "userId": "",
     "eventId": event_name,
     "ticketNumber": 1,
@@ -28,7 +26,7 @@ ably = AblyRest('APIKEY')
 channel = ably.channels.get("bookings:booking1")
 for count in range(number_of_bookings):
     mybooking["userId"] = names.get_full_name()
-    mybooking["ticketNumber"] = random.randint(1,5)
-    mybooking["timestamp"] = int((datetime.datetime.now() - datetime.timedelta(days=random.randint(1,10))).timestamp()) 
+    mybooking["ticketNumber"] = random.randint(1, 5)
+    mybooking["timestamp"] = int((datetime.datetime.now() - datetime.timedelta(days=random.randint(1, 10))).timestamp())
     channel.publish('booking', mybooking)
 
