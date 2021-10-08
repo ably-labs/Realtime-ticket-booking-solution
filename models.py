@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 from typing import *
-from datetime import date, datetime, time, timedelta
+from datetime import datetime
 
 
 class Conference(BaseModel):
@@ -12,12 +12,14 @@ class Conference(BaseModel):
     timestamp: int
     pass
 
+
 class Booking(BaseModel):
     userId: str
     eventId: str
     ticketNumber: int
     timestamp: int
     pass
+
 
 class Cancellation(BaseModel):
     userId: str
@@ -26,7 +28,8 @@ class Cancellation(BaseModel):
     timestamp: datetime
     pass
 
-class Presence_message(BaseModel):
+
+class PresenceMessage(BaseModel):
     id: str
     clientId: str
     connectionId: str
@@ -36,35 +39,39 @@ class Presence_message(BaseModel):
     pass
 
 
-class Presence_wrapper(BaseModel):
+class PresenceWrapper(BaseModel):
     channelId: str
     site: str
-    presence: List[Presence_message]
+    presence: List[PresenceMessage]
     pass
 
-class Ably_webhook_message(BaseModel):
+
+class AblyWebhookMessage(BaseModel):
     id: str
     timestamp: datetime
-    data: str # Ably stringifies the data here
+    data: str  # Ably stringifies the data here
     name: str
     pass
 
-class Webhook_data(BaseModel):
+
+class WebhookData(BaseModel):
     channelId: str
     site: str
-    messages: List[Ably_webhook_message]
+    messages: List[AblyWebhookMessage]
     pass
 
-class Webhook_item(BaseModel):
+
+class WebhookItem(BaseModel):
     webhookId: str
     source: str
     timestamp: datetime
     serial: Optional[str] = None
     name: str
-    data: Union[Webhook_data, Presence_wrapper]
+    data: Union[WebhookData, PresenceWrapper]
     pass
 
-class Ably_webhook(BaseModel):
-    items: List[Webhook_item]
+
+class AblyWebhook(BaseModel):
+    items: List[WebhookItem]
     pass
 
