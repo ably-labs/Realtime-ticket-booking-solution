@@ -25,7 +25,7 @@ schema_registry_local = {'url': 'http://127.0.0.1:8081'}
 booking_avro_serializer = AvroSerializer(schema_registry_client = SchemaRegistryClient(schema_registry_local), schema_str = booking_schema)
 conference_avro_serializer   = AvroSerializer(schema_registry_client = SchemaRegistryClient(schema_registry_local), schema_str = conference_schema)
                                           
-conference_config   = {'bootstrap.servers': 'localhost:9092', 'value.serializer': event_avro_serializer}
+conference_config   = {'bootstrap.servers': 'localhost:9092', 'value.serializer': conference_avro_serializer}
 booking_config = {'bootstrap.servers': 'localhost:9092', 'value.serializer': booking_avro_serializer}
 
 @app.on_event('startup')
@@ -46,6 +46,8 @@ async def bookings(data: Ably_webhook, request: Request):
         booking_list = [Booking.parse_raw(x.data) for x in data.items[0].data.messages]
         for booking_entry in booking_list:
             booking_producer.produce(booking_topic, None, booking_entry.dict())
+        booking_producer.poll(0)
+        booking_producer.flush
     except Exception as e:
         print(e)
         return 400

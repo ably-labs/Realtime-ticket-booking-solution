@@ -1,8 +1,9 @@
+import datetime
 import json
 import names
 import random
 import requests
-import datetime
+
 
 
 #This is the layout of the event creation message as seen in the open API spec when you start the main API
@@ -15,7 +16,8 @@ my_event =  {
     "timestamp": 0        #Event creation timestamp unused at the moment UTC timestamp
     }
 
-target_url = 'http://127.0.0.1:8000/conference-events'
+target_url = 'http://127.0.0.1:8000/inbound-conferences' # url for the event creation endpoint set for local dev.
+
 events = 20 # number of events to make
 
 first_event = datetime.datetime.now()	# this today,  we are going to create events offset from this

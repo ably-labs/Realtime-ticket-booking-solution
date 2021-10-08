@@ -16,7 +16,7 @@ class Booking(BaseModel):
     userId: str
     eventId: str
     ticketNumber: int
-    timestamp: datetime
+    timestamp: int
     pass
 
 class Cancellation(BaseModel):
