@@ -5,3 +5,4 @@ ably
 pydantic 
 confluent-kafka
 names
+requests
