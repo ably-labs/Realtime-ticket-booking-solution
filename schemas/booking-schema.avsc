@@ -2,7 +2,7 @@
   "type": "record",
   "namespace": "example.avro.ably",
   "name": "Booking",
-  "doc": "This is the schema for a ticket booking or cancelation",
+  "doc": "This is the schema for a ticket booking or cancellation",
   "fields": [
       {
         "name": "userId",
