@@ -1,11 +1,11 @@
-# booking-calander
+# Realtime ticket booking solution
 
-Welcome to The Ably Booking Calander API Demo.  
 
-This demo expects you to have a version of the [Confluent Platform](https://docs.confluent.io/platform/current/quickstart/ce-quickstart.html) up and running with ksqlDB + schema registry. The defaults in the code are for the stand alone broker though these can be replace with cloud config or a local docker config.
-For more detailed instructions please see [the blog](https://www.ably.com)
+Welcome to the Ably Realtime ticket booking solution!
+This demo expects you to have a version of the [Confluent Platform](https://docs.confluent.io/platform/current/quickstart/ce-quickstart.html) up and running with Kafka, ksqlDB, and Schema Registry. The defaults in the code are for the stand alone broker, although these can be replaced with cloud config or a local Docker config. 
+In addition, we will use several other technologies to build the ticket booking solution:
+* [ably](https://ably.com/)
+* [FastAPI](https://fastapi.tiangolo.com/)
+* [Ngrok](https://ngrok.com/)
 
-To start the application: use the following: 
-
-uvicorn app:app --reload
-
+For detailed instructions, [please refer to the technical guide](https://ably.com/blog/realtime-ticket-booking-solution-kafka-fastapi-ably). 
